@@ -241,5 +241,65 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js">
     </script>
+     <script>
+        (()=>{
+            'use strict'
+            const forms = document.querySelectorAll('.needs-validation')
+            Array.from(forms).forEach(form =>{
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()){
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+                    form.classList.add('was-validated')
+
+                    const doc = new jsPDF();
+
+                    let fecha="11-10-2022";
+
+                    let nombreAlumno = document.getElementById("nombreAlumno").value;
+
+                    let apellidoAlumno =document.getElementById("apellidoAlumno").value;
+
+                    doc.setFillColor(28, 41, 51);
+
+                    doc.rect(0, 0, 220, 60, 'f');
+
+                     //doc.addImage(ImageData, 10, 8, 106, 34);
+
+                    doc.setFontSize(14);
+
+                    doc.setFontType("bold");
+
+                    doc.setTextColor(22, 225, 255);
+
+                    doc.text('COLEGIO: REGISTRO DE MATRICULA  2023',12, 50);
+
+                    let counter = 90
+
+                    doc.setTextColor(37, 40, 80);
+                    let inputs = document.querySelectorAll(".col-lg-4")
+
+                    Array.from(inputs).forEach((item) => {
+                        let input = item.querySelector("input").value
+                        let label = item.querySelector("label").innerHTML
+
+                        doc.text(`${label} ${input}`, 12, counter);
+                        counter = counter + 10;
+                    })
+
+
+                    let partes = fecha.split('-');
+
+                    var fechadoc = partes[2]+ '-'+ partes[1]+ '-' + partes[0];
+
+                    const docpdf = `${nombreAlumno} ${apellidoAlumno} ${fechadoc}.pdf`;
+                    doc.save(docpdf);
+                }, false)
+            })
+        })()
+    </script>
+<script>   
+</script>
 </body>
 </html>
