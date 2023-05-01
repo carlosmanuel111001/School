@@ -103,7 +103,7 @@
                             </div>
                             <div class="col-lg-4">
                                 <label form="telefonoAlumno" class="form-label">Telefono Alumno:</label>
-                                <input name="telefonoalumno" type="text" class="form-control" id="telefonoAlumno"
+                                <input name="telefonoalumno" type="number" class="form-control" id="telefonoAlumno"
                                 placeholder="Ingrese telefono alumno" required>
                                 <div class="valid-feedback">
                                     ¡Correcto!
@@ -114,14 +114,11 @@
                             </div>
                             <div class="col-lg-4">
                                 <label form="discapacidadAlumno" class="form-label">Discapacidad:</label>
-                                <input name="discapacidad" type="text" class="form-control" id="discapacidadAlumno"
-                                placeholder="Elija Discapacidad" required>
-                                <div class="valid-feedback">
-                                    ¡Correcto!
-                                </div> 
-                                <div class="invalid-feedback">
-                                    Debe elegir si tiene una discapacidad
-                                </div> 
+                                <select name="discapacidad" id="discapacidadAlumno" >
+                                    <option value="¿">??</option>
+                                    <option value="si">Si</option>
+                                    <option value="no">No</option>
+                                </select>
                             </div>
                             <hr class="my-4">
                             <div class="col-lg-4">
@@ -198,7 +195,7 @@
                             <div class="col-lg-4">
                                 <label for="numeroTelefono" class="form-label">Telefono</label>
 
-                                <input name="numero-Telefono" type="text" class="form-control" id="numeroTelefono"
+                                <input name="numero-Telefono" type="number" class="form-control" id="numeroTelefono"
                                 placeholder="Ingrese su Telefono" required>
                                 <div class="valid-feedback">
                                     ¡Correcto!
@@ -210,7 +207,7 @@
                             <div class="col-lg-4">
                                 <label for="salarioTutor" class="form-label">Salario</label>
 
-                                <input name="salario-Tutor" type="text" class="form-control" id="salarioTutor"
+                                <input name="salario-Tutor" type="number" class="form-control" id="salarioTutor"
                                 placeholder="Ingrese Salario del Tutor" required>
                                 <div class="valid-feedback">
                                     ¡Correcto!
@@ -222,7 +219,7 @@
                             <div class="col-lg-4">
                                 <label for="numeroHijos" class="form-label">Numero de Hijos</label>
 
-                                <input name="numero-Hijos" type="text" class="form-control" id="numeroHijos"
+                                <input name="numero-Hijos" type="number" class="form-control" id="numeroHijos"
                                 placeholder="Ingrese el numero de Hijos" required>
                                 <div class="valid-feedback">
                                     ¡Correcto!
